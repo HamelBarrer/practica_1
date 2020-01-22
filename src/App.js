@@ -4,11 +4,19 @@ import Cita from './components/Cita';
 
 function App() {
 
+    // Citas en local store
+    let citasIniciales = JSON.parse(localStorage.getItem('citas'));
+    if (!citasIniciales) {
+        citasIniciales = [];
+        return;
+    }
+
+
     // Areglo de citas
-    const [citas, guardarCitas] = useState([]);
+    const [citas, guardarCitas] = useState(citasIniciales);
 
     // useEffect para realizar operaciones
-    useEffect( () => {
+    useEffect(() => {
 
     }, [citas]);
 
